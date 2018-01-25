@@ -2,13 +2,17 @@
     id = "my.timer"
 	version = "1.0.0">
 
-<feature name="Vibration">
-    <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
-</feature>
+
 <feature name="Media">
     <plugin name="Media" value="org.apache.cordova.AudioHandler" />
 </feature>
 <feature name="Notification">
-    <param name="android-package" value="org.apache.cordova.Notification" />
+    <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+</feature>
+<feature name="Vibration">
+    <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+</feature>
+<feature name="Notification">
+    <param name="ios-package" value="CDVNotification" />
 </feature>
 </widget>
