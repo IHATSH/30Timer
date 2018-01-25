@@ -1,0 +1,17 @@
+ <!DOCTYPE html>
+<html>
+ <script language="JavaScript">
+	function countDown(time){
+	var timer = document.getElementById("clockdiv");
+	setInterval(function(){  if(time >=0) {
+											timer.innerHTML=time; 
+											time=time-1; } 
+											},1000);
+	}
+	
+ </script>
+	
+<button onclick="countDown(30)">Strength</button>
+<div id="clockdiv"></div>
+ 
+</html> 
