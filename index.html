@@ -5,7 +5,7 @@
 	var timer = document.getElementById("clockdiv");
 	setInterval(function(){  if(time >=0) {
 											timer.innerHTML=time; 
-											time=time-1; } 
+											time=time-1; } else window.navigator.vibrate(1000); 
 											},1000);
 	}
 	
