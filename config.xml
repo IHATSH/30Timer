@@ -1,19 +1,7 @@
-<widget xmlns   = "http://www.w3.org/ns/widgets"
-    xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "my.timer"
-    versionCode = "10" >
+<widget 
+    id = "my.timer"
+	version = "1.0.0">
 
-<!-- versionCode is optional and Android only -->
-	
-  <name>Gym Timer</name>
-
-  <description>
-      An example for phonegap build docs.
-  </description>
-
-  <author>
-     M & S
-  </author>
 <feature name="Vibration">
     <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
 </feature>
