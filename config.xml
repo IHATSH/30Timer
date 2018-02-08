@@ -2,11 +2,5 @@
     id = "my.timer"
 	version = "1.0.0">
 
-<plugin name="File" value="org.apache.cordova.FileUtils" />
-<plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
-
-<plugin name="File" value="CDVFile" />
-<plugin name="FileTransfer" value="CDVFileTransfer" />
-
 <plugin name="cordova-plugin-vibration" />
 </widget>
