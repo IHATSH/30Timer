@@ -1,21 +1,103 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+ <style>
+ body, html {
+	 /* The image used */
+    background-image: url("shutterstock_105879623.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  visibility:visible;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0px;
+  font-size: 30px;
+  text-align: center;
+}
+.Button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  height:100%;
+  width:100%;
+}
+.Clock {;
+  padding: 5px;
+  font-size: 70px;
+  text-align: center;
+  color:white;
+  height:100%;
+  width:100%; 
+  visibility:hidden;
+}
+.ClockButtonCSS {;
+  padding: 20px;
+  font-size: 70px;
+  text-align: center;
+  color:black;
+  height:100%;
+  width:100%; 
+}
+</style>
+<body>
+<div id="ButtonsDIV" class="grid-container"></div>
+
+
+
+ 
+ 
  <script language="JavaScript">
+ 
+ /// change the following link to tests.html when using tests.
 	function countDown(time){
-	var timer = document.getElementById("clockdiv");
-	var interval = setInterval(function(){  if(time >=0) {
-											timer.innerHTML=time; 
-											time=time-1; } else{
-												timer.innerHTML="Vibrate"; 
-												navigator.vibrate(1000);
-												clearInterval(interval);
-													}
-											},1000);
+		self.location = "ClockTimerButton.html?time="+time;
+	}
+	function Tabata(i){
+		self.location = "ClockTimerButton.html?time=Tabata";
 	}
 	
- </script>
 	
-<button onclick="countDown(5)">Strength</button>
-<div id="clockdiv"></div>
+	function SetUpGUI(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			myFunction(this);
+		}
+	};
+	xhttp.open("GET", "ButtonsSetUp.xml", true);
+	xhttp.send();
+}
+	function myFunction(xml) {
+		var xmlDoc = xml.responseXML;
+		var ButtonsDIVs = document.getElementById("ButtonsDIV");
+		var children = xmlDoc.getElementsByTagName("GymTimerButtonConfig")[0].children;
+		for (var i = 0; i < xmlDoc.getElementsByTagName("GymTimerButtonConfig")[0].childElementCount; i++) {
+			var CurrentButton = children[i];
+			ButtonsDIVs.innerHTML =ButtonsDIVs.innerHTML+ "<div class=\"grid-item\">"+ "<button class=\"Button\" onclick="+"\""+CurrentButton.getElementsByTagName("onclickFunctionName")[0].innerHTML+"("+ CurrentButton.getElementsByTagName("value")[0].innerHTML +")" + "\"" + ">"+CurrentButton.getElementsByTagName("name")[0].innerHTML+"</button>"+"</div>";
+		}
+	}
+	
+		
+	window.onload = SetUpGUI();
+	
+ </script>
+</body>	
+
  
 </html> 

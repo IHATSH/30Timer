@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<GymTimerButtonConfig id ="root">
+	<button1>
+		<number>1</number>
+		<name>Strength</name>
+		<value>30</value>
+		<onclickFunctionName>countDown</onclickFunctionName>
+	</button1>
+	<button2>
+		<number>2</number>
+		<name>Endurance</name>
+		<value>20</value>
+		<onclickFunctionName>countDown</onclickFunctionName>
+	</button2>
+	<button3>
+		<number>3</number>
+		<name>Power</name>
+		<value>5</value>
+		<onclickFunctionName>countDown</onclickFunctionName>
+	</button3>
+	<button4>
+		<number>4</number>
+		<name>Hypertrophy</name>
+		<value>8</value>
+		<onclickFunctionName>countDown</onclickFunctionName>
+	</button4>
+	<button5>
+		<number>5</number>
+		<name>Tabata</name>
+		<value>5</value>
+		<onclickFunctionName>Tabata</onclickFunctionName>
+	</button5>
+	<button6>
+		<number>6</number>
+		<name>Custom</name>
+		<value>Null</value>
+		<onclickFunctionName>ButtonEdit</onclickFunctionName>
+	</button6>
+	<button7>
+		<number>7</number>
+		<name>Settings</name>
+		<value>Null</value>
+		<onclickFunctionName>Settings</onclickFunctionName>
+	</button7>
+</GymTimerButtonConfig>
+</root>
+    

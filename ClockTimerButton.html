@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<style>
+.Clock {;
+  padding: 5px;
+  font-size: 70px;
+  text-align: center;
+  color:white;
+  height:100%;
+  width:100%; 
+}
+.ClockButtonCSS {;
+  padding: 20px;
+  font-size: 70px;
+  text-align: center;
+  color:black;
+  height:100%;
+  width:100%; 
+}
+</style>
+<div id="clockdiv" class="Clock"> <button id="ClockButton" class="ClockButtonCSS"></button></div>
+<script language="JavaScript">
+function Tabatas(Excersice,Rest,Repeat){
+				var flagGO = false;
+				var timer = document.getElementById("ClockButton");
+                var TabataTimex = Excersice;
+				var interval1 = setInterval(function(){  if(TabataTimex >=0) {
+												timer.innerHTML="EXERSICE<br>"+TabataTimex; 
+												TabataTimex--; 
+												} 
+												
+												else 
+												{
+												clearInterval(interval1);	
+												navigator.vibrate(200); 
+												timer.innerHTML="";
+												TabataTimex = Excersice;
+												//i++;
+											    var TabataTimey = Rest;
+												var interval2 = setInterval(function(){  if(TabataTimey >=0) {
+														timer.innerHTML="REST<br>"+TabataTimey; 
+														TabataTimey--;
+														} 
+														else 
+														{
+														clearInterval(interval2);														
+														TabataTimey = Rest;														
+														navigator.vibrate(200); 
+														timer.innerHTML="";
+														Repeat--;
+														flagGO = true;
+														if(Repeat > 0){
+														Tabatas(Excersice,Rest,Repeat);
+														}
+														if (Repeat == 0){
+															self.location = "index.html";
+														}
+			}
+												
+					},1000);
+						}						
+			},1000);
+			//if (flagGO == true){
+			//var trytocontinue  = setInterval(	Tabatas, 30000,Excersice,Rest,Repeat);
+			//}
+			/*if (flagGO == true){
+			flagGO = false;
+			var trytocontinue  = setInterval(	Tabatas, 1,Excersice,Rest,Repeat);
+			}
+			if (Repeat == 0){clearInterval(trytocontinue);
+								self.location = "index.html";
+								} */
+	}
+
+
+
+
+ function countDown(time){
+	//alert(time);
+	var timer = document.getElementById("ClockButton");
+	if (time === 'Tabata'){
+	//alert("Tabata");
+			Tabatas(20,10,8)
+				
+	}
+	
+	
+	/////////the following is non-tabata code
+	else{
+	
+	var interval = setInterval(function(){  if(time >=0) {
+											timer.innerHTML=time; 
+											time=time-1; } 
+											else 
+											{
+											clearInterval(interval);
+											
+											timer.innerHTML="";
+											
+											navigator.vibrate(200); 
+											self.location = "index.html";
+											}
+		},1000);
+		}
+	}
+	function processUser()
+  {
+    var parameters = location.search.substring(1).split("&");
+
+    var temp = parameters[0].split("=");
+    var time = unescape(temp[1]);
+    //clockCountDown(30,"ClockButton");
+	//COUNT_DOWN(time);
+	countDown(time);
+  }
+	window.onload = processUser();
+</script>
+</html>
