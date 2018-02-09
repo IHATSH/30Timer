@@ -31,23 +31,25 @@ function Tabatas(Excersice,Rest,Repeat){
 												
 												else 
 												{
-												clearInterval(interval1);	
-												navigator.vibrate(200); 
+												
+												navigator.vibrate(1000); 
 												timer.innerHTML="";
 												TabataTimex = Excersice;
 												//i++;
 											    var TabataTimey = Rest;
+												clearInterval(interval1);	
 												var interval2 = setInterval(function(){  if(TabataTimey >=0) {
 														timer.innerHTML="REST<br>"+TabataTimey; 
 														TabataTimey--;
 														} 
 														else 
 														{
-														clearInterval(interval2);														
+																												
 														TabataTimey = Rest;														
-														navigator.vibrate(200); 
+														navigator.vibrate(1000); 
 														timer.innerHTML="";
 														Repeat--;
+														clearInterval(interval2);
 														flagGO = true;
 														if(Repeat > 0){
 														Tabatas(Excersice,Rest,Repeat);
@@ -93,11 +95,12 @@ function Tabatas(Excersice,Rest,Repeat){
 											time=time-1; } 
 											else 
 											{
-											clearInterval(interval);
+											
 											
 											timer.innerHTML="";
 											
-											navigator.vibrate(200); 
+											navigator.vibrate(1000); 
+											clearInterval(interval);
 											self.location = "index.html";
 											}
 		},1000);
