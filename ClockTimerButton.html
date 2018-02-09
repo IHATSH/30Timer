@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <style>
+html, body {
+            height: 100%;
+            margin: 0;
+        }
 .Clock {
   padding: 5px;
   font-size: 70px;
@@ -36,7 +40,7 @@ function Tabatas(Excersice,Rest,Repeat){
 												else 
 												{
 												
-												navigator.vibrate(1000); 
+												navigator.notification.vibrate(1000); 
 												timer.innerHTML="";
 												TabataTimex = Excersice;
 												//i++;
@@ -50,7 +54,7 @@ function Tabatas(Excersice,Rest,Repeat){
 														{
 																												
 														TabataTimey = Rest;														
-														navigator.vibrate(1000); 
+														navigator.notification.vibrate(1000); 
 														timer.innerHTML="";
 														Repeat--;
 														clearInterval(interval2);
@@ -103,7 +107,7 @@ function Tabatas(Excersice,Rest,Repeat){
 											
 											timer.innerHTML="";
 											
-											navigator.vibrate(1000); 
+											navigator.notification.vibrate(1000); 
 											clearInterval(interval);
 											self.location = "index.html";
 											}
@@ -119,9 +123,8 @@ function Tabatas(Excersice,Rest,Repeat){
     var time = unescape(temp[1]);
     //clockCountDown(30,"ClockButton");
 	//COUNT_DOWN(time);
-	document.addEventListener("deviceready", function(){
-      countDown(time);
- },false);
+     countDown(time);
+
 	
   }
    window.onload = processUser();
