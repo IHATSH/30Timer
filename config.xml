@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget id = "my.timer"	version = "1.0.0">
- <plugin name="cordova-plugin-vibration" />
+<plugin name="cordova-plugin-vibration" spec="3.0.1" />
 </widget>
