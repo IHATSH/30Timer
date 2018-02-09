@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
-.Clock {;
+.Clock {
   padding: 5px;
   font-size: 70px;
   text-align: center;
@@ -9,7 +9,7 @@
   height:100%;
   width:100%; 
 }
-.ClockButtonCSS {;
+.ClockButtonCSS {
   padding: 20px;
   font-size: 70px;
   text-align: center;
@@ -20,6 +20,10 @@
 </style>
 <div id="clockdiv" class="Clock"> <button id="ClockButton" class="ClockButtonCSS"></button></div>
 <script language="JavaScript">
+/*window.onload = (
+document.addEventListener("deviceready", function(){
+      processUser();
+ },true));*/
 function Tabatas(Excersice,Rest,Repeat){
 				var flagGO = false;
 				var timer = document.getElementById("ClockButton");
@@ -106,6 +110,7 @@ function Tabatas(Excersice,Rest,Repeat){
 		},1000);
 		}
 	}
+	
 	function processUser()
   {
     var parameters = location.search.substring(1).split("&");
@@ -114,8 +119,11 @@ function Tabatas(Excersice,Rest,Repeat){
     var time = unescape(temp[1]);
     //clockCountDown(30,"ClockButton");
 	//COUNT_DOWN(time);
-	countDown(time);
+	document.addEventListener("deviceready", function(){
+      countDown(time);
+ },false);
+	
   }
-	window.onload = processUser();
+   window.onload = processUser();
 </script>
 </html>
