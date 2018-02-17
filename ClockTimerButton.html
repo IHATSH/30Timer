@@ -40,7 +40,7 @@ function Tabatas(Excersice,Rest,Repeat){
 												else 
 												{
 												
-												self.navigator.vibrate(1000); 
+												navigator.notification.vibrate(1000); 
 												timer.innerHTML="";
 												TabataTimex = Excersice;
 												//i++;
@@ -54,7 +54,7 @@ function Tabatas(Excersice,Rest,Repeat){
 														{
 																												
 														TabataTimey = Rest;														
-														self.navigator.vibrate(1000); 
+														navigator.notification.vibrate(1000); //////change all of these self. 
 														timer.innerHTML="";
 														Repeat--;
 														clearInterval(interval2);
@@ -107,7 +107,7 @@ function Tabatas(Excersice,Rest,Repeat){
 											
 											timer.innerHTML="";
 											
-											self.navigator.vibrate(1000); 
+											navigator.notification.vibrate(1000); 
 											clearInterval(interval);
 											self.location = "index.html";
 											}
